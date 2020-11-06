@@ -9,6 +9,9 @@ var ground;
 var b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21;
 var ball;
 var roof,rope;
+var stack1 = [];
+var stack2 = [];
+var stack3 = [];
 
 function setup() {
   createCanvas(1200,600);
@@ -18,7 +21,19 @@ function setup() {
 
   ground = new Ground(600,580,1200);
 
-  b1 = new Box(800,100);
+  for(var i=0; i<=7 ;i++){
+    stack1.push(new Box(800,100));
+  }
+
+  for(var j=0; j<=7 ;j++){
+    stack2.push(new Box(900,100));
+  }
+
+  for(var k=0; k<=7 ;k++){
+    stack3.push(new Box(1000,100));
+  }
+
+ /* b1 = new Box(800,100);
   b2 = new Box(800,100);
   b3 = new Box(800,100);
   b4 = new Box(800,100);
@@ -40,7 +55,7 @@ function setup() {
   b18 = new Box(1000,100);
   b19 = new Box(1000,100);
   b20 = new Box(1000,100);
-  b21 = new Box(1000,100);
+  b21 = new Box(1000,100);*/
 
   ball = new Ball(400,200);
   roof = new Ground(500,50,50);
@@ -53,7 +68,19 @@ function draw() {
   Engine.update(myEngine);
   ground.show();
 
-  b1.show();
+  for(var i=0; i<stack1.length;i++){
+    stack1[i].show();
+  }
+
+  for(var j=0; j<stack2.length;j++){
+    stack2[j].show();
+  }
+
+  for(var k=0; k<stack3.length;k++){
+    stack3[k].show();
+  }
+
+ /* b1.show();
   b2.show();
   b3.show();
   b4.show();
@@ -73,8 +100,9 @@ function draw() {
   b18.show();
   b19.show();
   b20.show();
-  b21.show();
+  b21.show();*/
 
+  
   ball.show();
   rope.show();
 }
